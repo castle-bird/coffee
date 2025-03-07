@@ -13,20 +13,44 @@ const config = [
         element: <Main />,
         children: [
             {
-                index: true,
+                path: '',
                 element: <AllMenu />,
+                children: [
+                    {
+                        path: "detail/:productId",
+                        element: <AllMenu />,
+                    },
+                ],
             },
             {
                 path: "coffee",
                 element: <Coffee />,
+                children: [
+                    {
+                        path: "detail/:productId",
+                        element: <Coffee />,
+                    },
+                ],
             },
             {
                 path: "non-coffee",
                 element: <NonCoffee />,
+                children: [
+                    {
+                        path: "detail/:productId",
+                        element: <NonCoffee />,
+                    },
+                ],
             },
             {
                 path: "bread",
                 element: <Bread />,
+                children: [
+                    {
+                        path: "detail/:productId",
+                        element: <Bread />,
+                    },
+                ],
             },
         ],
     },
