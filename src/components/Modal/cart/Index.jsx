@@ -45,7 +45,7 @@ function Cart() {
             </div>
 
             <button onClick={onClose}>닫기</button>
-            <button onClick={onPayment}>결제하기</button>
+            {cart.items.length !== 0 && <button onClick={onPayment}>결제하기</button>}
         </Modal>
     );
 }

@@ -6,6 +6,9 @@ import Coffee from "../pages/coffee";
 import NonCoffee from "../pages/nonCoffee";
 import Bread from "../pages/bread";
 import MarketReview from "../pages/marketReview";
+import List from "../pages/marketReview/List";
+import Edit from "../pages/marketReview/edit";
+import View from "../pages/marketReview/view";
 
 const config = [
     {
@@ -13,7 +16,7 @@ const config = [
         element: <Main />,
         children: [
             {
-                path: '',
+                path: "",
                 element: <AllMenu />,
                 children: [
                     {
@@ -57,6 +60,20 @@ const config = [
     {
         path: "/market-review",
         element: <MarketReview />,
+        children: [
+            {
+                index: true,
+                element: <List />,
+            },
+            {
+                path: "edit",
+                element: <Edit />,
+            },
+            {
+                path: "view/:reviewId",
+                element: <View />,
+            },
+        ],
     },
 ];
 
