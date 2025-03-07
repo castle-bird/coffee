@@ -1,4 +1,4 @@
-import LoadingContainer from "./Loading-styled";
+import LoadingContainer from "./styled";
 
 function Loading() {
     return (
