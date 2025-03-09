@@ -6,9 +6,10 @@ import ProductsList from "../../components/producstList/Index";
 function Coffee() {
     const products = useSelector((state) => state.products);
 
-    const breadProducts = useMemo(() => {
-        return products.filter((product) => product.category === "빵");
-    }, [products]);
+    const breadProducts = useMemo(
+        () => products.filter((product) => product.category === "빵"),
+        [products]
+    );
 
     return (
         <>

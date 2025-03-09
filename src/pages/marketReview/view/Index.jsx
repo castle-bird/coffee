@@ -1,7 +1,11 @@
+
+
 function View() {
+  
+
     return (
         <>
-            뷰
+            
         </>
     );
 }

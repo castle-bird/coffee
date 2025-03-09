@@ -1,8 +1,15 @@
-function Input({ label, id, type = "text", className = "" }) {
+function Input({ label, id, type = "text", className = "", essential, ...props }) {
     return (
         <>
             <label htmlFor={id}>{label}</label>
-            <input id={id} type={type} className={`default ${className}`} />
+            <input
+                name={id}
+                id={id}
+                type={type}
+                className={`default ${className}`}
+                required={essential}
+                {...props}
+            />
         </>
     );
 }
