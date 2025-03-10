@@ -1,22 +1,29 @@
+import { useState } from "react";
 import RatingContainer from "./styled";
 
 export default function Rating() {
+    const stars = [5, 4, 3, 2, 1];
+    const [rating, setRating] = useState(null);
+
+    const onChange = (e) => {
+        setRating(Number(e.target.value));
+    };
+
     return (
         <RatingContainer>
-            <input value="5" name="rating" id="star5" type="radio" />
-            <label htmlFor="star5"></label>
-
-            <input value="4" name="rating" id="star4" type="radio" />
-            <label htmlFor="star4"></label>
-
-            <input value="3" name="rating" id="star3" type="radio" />
-            <label htmlFor="star3"></label>
-
-            <input value="2" name="rating" id="star2" type="radio" />
-            <label htmlFor="star2"></label>
-
-            <input value="1" name="rating" id="star1" type="radio" />
-            <label htmlFor="star1"></label>
+            {stars.map((star) => (
+                <div key={star} className={`star-wrap ${rating >= star ? "on" : ""}`}>
+                    <input
+                        value={star}
+                        name="rating"
+                        id={`star${star}`}
+                        type="radio"
+                        checked={rating === star}
+                        onChange={onChange}
+                    />
+                    <label htmlFor={`star${star}`}></label>
+                </div>
+            ))}
         </RatingContainer>
     );
 }
