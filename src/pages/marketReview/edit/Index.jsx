@@ -29,7 +29,7 @@ function Edit() {
 
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries()); // FormData를 객체로 변환
-        
+
         postReview(data);
     };
 
@@ -79,7 +79,7 @@ function Edit() {
                             <Input label="제목 입력 칸" id="title" essential={true} />
                         </li>
                         <li>
-                        <span>날짜</span>
+                            <span>날짜</span>
                             <Input
                                 label="날짜 입력 칸"
                                 id="date"
@@ -88,7 +88,7 @@ function Edit() {
                             />
                         </li>
                         <li>
-                        <span>메뉴</span>
+                            <span>메뉴</span>
                             <Select
                                 label="메뉴명 입력 칸"
                                 id="menu"
@@ -98,7 +98,7 @@ function Edit() {
                         </li>
                         <li>
                             <span>별점</span>
-                            <Rating essential={true} />
+                            <Rating  essential={true} />
                         </li>
                         <li>
                             <Textarea label="리뷰 입력 칸" id="review" essential={true} />

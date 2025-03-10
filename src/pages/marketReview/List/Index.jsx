@@ -16,7 +16,7 @@ function List() {
                         <thead>
                             <tr>
                                 <th>메뉴명</th>
-                                <th>리뷰</th>
+                                <th>제목</th>
                                 <th>날짜</th>
                                 <th>별점</th>
                             </tr>
@@ -26,11 +26,11 @@ function List() {
                                 <tr key={review.id}>
                                     <td>{review.menu}</td>
                                     <td>
-                                        <Link to={`view/${review.id}`}>{review.review}</Link>
+                                        <Link to={`view/${review.id}`}>{review.title}</Link>
                                     </td>
                                     <td>{review.date}</td>
                                     <td>
-                                        <Rating number={review.rating} />
+                                        <Rating currentStar={review.star} listView={true} />
                                     </td>
                                 </tr>
                             ))}

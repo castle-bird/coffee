@@ -6,10 +6,15 @@ const RatingContainer = styled.div`
     justify-content: center;
 
     .star-wrap {
+        position: relative;
         &.on {
             label::before {
                 color: #6f00ff;
             }
+        }
+
+        &.list-view {
+            pointer-events: none !important;
         }
 
         &:hover,
@@ -20,16 +25,25 @@ const RatingContainer = styled.div`
         }
 
         input {
-            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1px;
+            height: 1px;
+            margin: 0;
+            transform: translate(-50%, -50%);
+            z-index: -1;
         }
 
         label {
+            position: relative;
             cursor: pointer;
             color: #ccc;
             font-size: 1.5rem;
             line-height: 1.2;
             transition: color 0.3s;
             text-indent: 0px;
+            z-index: 1;
         }
 
         label::before {
