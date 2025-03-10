@@ -4,7 +4,6 @@ import RatingContainer from "./styled";
 export default function Rating({ number }) {
     const stars = [5, 4, 3, 2, 1];
     const [rating, setRating] = useState(number);
-    console.log(number);
 
     const onChange = (e) => {
         setRating(Number(e.target.value));
