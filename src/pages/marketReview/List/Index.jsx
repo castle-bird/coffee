@@ -6,7 +6,6 @@ import Rating from "../../../components/rating/Index";
 
 function List() {
     const reviews = useSelector((state) => state.reviews);
-    console.log(reviews);
 
     return (
         <ListContainer>
