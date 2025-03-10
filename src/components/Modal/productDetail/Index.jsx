@@ -25,9 +25,56 @@ function ProductDetail() {
             open={toggleModal === "showDetail"}
             onClose={toggleModal === "showDetail" ? onClose : null}
         >
-            {detailProcudt && detailProcudt.name}
+            {detailProcudt && (
+                <div className="detail">
+                    <strong data-category={`${detailProcudt.category}`}>
+                        {detailProcudt.name}
+                    </strong>
+                    <p>{detailProcudt.engName}</p>
+                    <p>{detailProcudt.description}</p>
 
-            <button onClick={onClose}>닫기</button>
+                    <h4>제품 영양 정보 1회 제공량</h4>
+                    <table>
+                        <caption>상품정보</caption>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>Hot(12oz)</th>
+                                <th>ICE(14oz)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>칼로리 (Kcal)</th>
+                                <td>{detailProcudt.ingredient.hot.kcal}</td>
+                                <td>{detailProcudt.ingredient.ice.kcal}</td>
+                            </tr>
+                            <tr>
+                                <th>나트륨 (mg)</th>
+                                <td>{detailProcudt.ingredient.hot.natrium}</td>
+                                <td>{detailProcudt.ingredient.ice.natrium}</td>
+                            </tr>
+                            <tr>
+                                <th>당류 (g)</th>
+                                <td>{detailProcudt.ingredient.hot.sugar}</td>
+                                <td>{detailProcudt.ingredient.ice.sugar}</td>
+                            </tr>
+                            <tr>
+                                <th>단백질 (g)</th>
+                                <td>{detailProcudt.ingredient.hot.protein}</td>
+                                <td>{detailProcudt.ingredient.ice.protein}</td>
+                            </tr>
+                            <tr>
+                                <th>카페인 (mg)</th>
+                                <td>{detailProcudt.ingredient.hot.caffeine}</td>
+                                <td>{detailProcudt.ingredient.ice.caffeine}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <button onClick={onClose}>닫기</button>
+                </div>
+            )}
         </Modal>
     );
 }

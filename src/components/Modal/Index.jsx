@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
+import ModalContainer from "./styled";
+
 export default function Modal({ children, open, onClose, className = "" }) {
     const dialog = useRef();
 
@@ -15,9 +17,9 @@ export default function Modal({ children, open, onClose, className = "" }) {
     }, [open]);
 
     return createPortal(
-        <dialog ref={dialog} className={`modal ${className}`} onClose={onClose}>
+        <ModalContainer ref={dialog} className={`modal ${className}`} onClose={onClose}>
             {children}
-        </dialog>,
+        </ModalContainer>,
         document.getElementById("modal")
     );
 }

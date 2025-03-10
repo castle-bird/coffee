@@ -21,6 +21,14 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1.3;
         color: ${properties.colors.default};
     }
+
+    label,
+    caption,
+    legend {
+        font-size: 0;
+        line-height: 0;
+        text-indent: -999px;
+    }
 `;
 
 export default GlobalStyle;

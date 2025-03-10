@@ -14,7 +14,7 @@ export default function Rating() {
 
             <input value="2" name="rating" id="star2" type="radio" />
             <label htmlFor="star2"></label>
-            
+
             <input value="1" name="rating" id="star1" type="radio" />
             <label htmlFor="star1"></label>
         </RatingContainer>

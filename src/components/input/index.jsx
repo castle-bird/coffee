@@ -1,4 +1,4 @@
-function Input({ label, id, type = "text", className = "", essential, ...props }) {
+function Input({ label, id, type = "text", className = "", essential, value, ...props }) {
     return (
         <>
             <label htmlFor={id}>{label}</label>
@@ -8,6 +8,7 @@ function Input({ label, id, type = "text", className = "", essential, ...props }
                 type={type}
                 className={`default ${className}`}
                 required={essential}
+                value={value}
                 {...props}
             />
         </>

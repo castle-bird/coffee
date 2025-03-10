@@ -1,13 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { reviewsAction } from "../../../store/reviews/reviewsSlice";
 
+import EditContainer from "./styled";
 import Textarea from "../../../components/textarea/Index";
 import Input from "../../../components/input";
 import Select from "../../../components/select/Select";
 import Rating from "../../../components/rating/Index";
 import Button from "../../../components/button/Index";
+import Loading from "../../../components/loading";
 
 function Edit() {
+    const [isLoading, setIsloading] = useState(false);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const products = useSelector((state) => state.products);
@@ -23,13 +29,13 @@ function Edit() {
 
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries()); // FormData를 객체로 변환
-
-        console.log(data);
-
-        //postReview(data);
+        
+        postReview(data);
     };
 
     const postReview = async (postData) => {
+        setIsloading(true);
+
         try {
             const response = await fetch(
                 "https://castle-bird-default-rtdb.firebaseio.com/reviews.json",
@@ -41,11 +47,20 @@ function Edit() {
                     body: JSON.stringify(postData), // 객체를 JSON 문자열로 변환
                 }
             );
+            const data = await response.json();
+            const reviewId = data.name; // firebase에서 임의의 ID값을 생성 시키는데 그 ID값을 받아오는 key값
 
             if (!response.ok) {
                 throw new Error("리뷰 작성 오류");
             }
 
+            const updatedData = {
+                id: reviewId,
+                ...postData,
+            };
+
+            dispatch(reviewsAction.addToReview(updatedData));
+            setIsloading(false);
             navigate("..");
         } catch (error) {
             console.error(error);
@@ -53,15 +68,18 @@ function Edit() {
     };
 
     return (
-        <>
+        <EditContainer>
+            {isLoading && <Loading />}
             <form onSubmit={onSubmit}>
                 <fieldset>
                     <legend>후기 작성하기</legend>
                     <ul>
                         <li>
+                            <span>제목</span>
                             <Input label="제목 입력 칸" id="title" essential={true} />
                         </li>
                         <li>
+                        <span>날짜</span>
                             <Input
                                 label="날짜 입력 칸"
                                 id="date"
@@ -70,6 +88,7 @@ function Edit() {
                             />
                         </li>
                         <li>
+                        <span>메뉴</span>
                             <Select
                                 label="메뉴명 입력 칸"
                                 id="menu"
@@ -78,6 +97,7 @@ function Edit() {
                             />
                         </li>
                         <li>
+                            <span>별점</span>
                             <Rating essential={true} />
                         </li>
                         <li>
@@ -91,7 +111,7 @@ function Edit() {
                     </div>
                 </fieldset>
             </form>
-        </>
+        </EditContainer>
     );
 }
 

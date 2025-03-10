@@ -9,6 +9,7 @@ import MarketReview from "../pages/marketReview";
 import List from "../pages/marketReview/List";
 import Edit from "../pages/marketReview/edit";
 import View from "../pages/marketReview/view";
+import Modify from "../pages/marketReview/modify";
 
 const config = [
     {
@@ -73,6 +74,10 @@ const config = [
                 path: "view/:reviewId",
                 element: <View />,
             },
+            {
+                path: 'modify/:reviewId',
+                element: <Modify/>
+            }
         ],
     },
 ];

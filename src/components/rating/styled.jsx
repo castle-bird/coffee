@@ -12,8 +12,10 @@ const RatingContainer = styled.div`
     label {
         cursor: pointer;
         color: #ccc;
-        font-size: 30px;
+        font-size: 1.5rem;
+        line-height: 1.2;
         transition: color 0.3s;
+        text-indent: 0px;
     }
 
     label::before {
