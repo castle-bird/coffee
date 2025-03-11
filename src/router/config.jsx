@@ -6,7 +6,7 @@ import Coffee from "../pages/coffee";
 import NonCoffee from "../pages/nonCoffee";
 import Bread from "../pages/bread";
 import MarketReview from "../pages/marketReview";
-import List from "../pages/marketReview/List";
+import List from "../pages/marketReview/list";
 import Edit from "../pages/marketReview/edit";
 import View from "../pages/marketReview/view";
 import Modify from "../pages/marketReview/modify";
