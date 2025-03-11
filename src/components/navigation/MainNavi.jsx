@@ -4,7 +4,7 @@ import { modalAction } from "../../store/modal/modalSlice";
 import { NavLink } from "react-router-dom";
 
 import MainNaviContainer from "./MainNavi-styled";
-import Button from "../button/Index";
+import Button from "../button";
 
 function MainNavi() {
     const dispatch = useDispatch();

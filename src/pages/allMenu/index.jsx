@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import Loading from "../../components/loading";
-import ProductsList from "../../components/producst-list";
+import ProductsList from "../../components/productsList";
 
 function AllMenu() {
     const products = useSelector((state) => state.products);

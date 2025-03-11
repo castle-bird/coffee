@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import config from "./config";
+import config from "./routerConfig";
 
 import Root from "../pages/Root";
 import Error from "../pages/error/Error";

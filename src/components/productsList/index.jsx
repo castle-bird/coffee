@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { modalAction } from "../../store/modal/modalSlice";
 import { cartAction } from "../../store/cart/cartSlice";
 
-import Button from "../button/Index";
+import Button from "../button";
 import ProductListContainer from "./styled";
 
 function ProductsList({ products }) {

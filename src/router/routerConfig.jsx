@@ -1,16 +1,18 @@
 // 페이지 추가 하는 곳
 
 import Main from "../pages/home";
-import AllMenu from "../pages/all-menu";
+import AllMenu from "../pages/allMenu";
 import Coffee from "../pages/coffee";
-import NonCoffee from "../pages/non-coffee";
+import NonCoffee from "../pages/nonCoffee";
 import Bread from "../pages/bread";
-import MarketReview from "../pages/market-review";
-import List from "../pages/market-review/list";
-import Edit from "../pages/market-review/edit";
-import View from "../pages/market-review/view";
-import Modify from "../pages/market-review/modify";
-import TeaAde from "../pages/tea-ade";
+
+import MarketReview from "../pages/marketReview";
+import List from "../pages/marketReview/list";
+import Edit from "../pages/marketReview/edit";
+import View from "../pages/marketReview/view";
+import Modify from "../pages/marketReview/modify";
+
+import TeaAde from "../pages/teaAde";
 
 const config = [
     {

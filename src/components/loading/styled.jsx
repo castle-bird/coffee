@@ -1,5 +1,5 @@
 import styled, {keyframes} from "styled-components";
-import properties from '../../global-style/GlobalStyleVar'
+import properties from '../../globalStyle/GlobalStyleVar'
 
 const spin = keyframes`
     0% {
