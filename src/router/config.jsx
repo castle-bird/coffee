@@ -18,7 +18,7 @@ const config = [
         element: <Main />,
         children: [
             {
-                path: "",
+                path: "/",
                 element: <AllMenu />,
                 children: [
                     {
