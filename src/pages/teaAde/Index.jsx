@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import Loading from "../../components/loading";
-import ProductsList from "../../components/producstList/Index";
+import ProductsList from "../../components/producstList";
 
 function TeaAde() {
     const products = useSelector((state) => state.products);

@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { useMemo } from "react";
 import { modalAction } from "../../../store/modal/modalSlice";
-import Modal from "../Index";
+import Modal from "..";
 
 function ProductDetail() {
     const navigate = useNavigate();

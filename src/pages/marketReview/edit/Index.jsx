@@ -4,11 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { reviewsAction } from "../../../store/reviews/reviewsSlice";
 
 import EditContainer from "./styled";
-import Textarea from "../../../components/textarea/Index";
+import Textarea from "../../../components/textarea";
 import Input from "../../../components/input";
-import Select from "../../../components/select/Select";
-import Rating from "../../../components/rating/Index";
-import Button from "../../../components/button/Index";
+import Select from "../../../components/select";
+import Rating from "../../../components/rating";
+import Button from "../../../components/button";
 import Loading from "../../../components/loading";
 
 function Edit() {

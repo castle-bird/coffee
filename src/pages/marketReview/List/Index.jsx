@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Loading from "../../../components/loading";
 import ListContainer from "./styled";
-import Rating from "../../../components/rating/Index";
+import Rating from "../../../components/rating";
 
 function List() {
     const reviews = useSelector((state) => state.reviews);

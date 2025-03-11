@@ -2,8 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { modalAction } from "../../../store/modal/modalSlice";
 import { cartAction } from "../../../store/cart/cartSlice";
 
-import Modal from "../Index";
-import Button from "../../button/Index";
+import Modal from "..";
+import Button from "../../button";
 
 function Cart() {
     const dispatch = useDispatch();

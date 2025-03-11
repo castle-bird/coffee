@@ -3,9 +3,9 @@ import { modalAction } from "../../../store/modal/modalSlice";
 import { cartAction } from "../../../store/cart/cartSlice";
 import { useMemo, useState } from "react";
 
-import Modal from "../Index";
+import Modal from "..";
 import Input from "../../input";
-import Button from "../../button/Index";
+import Button from "../../button";
 
 function Payment() {
     const dispatch = useDispatch();
