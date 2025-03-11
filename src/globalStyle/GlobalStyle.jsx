@@ -27,6 +27,10 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Pretendard Variable", Pretendard, "Gmarket Sans",-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",sans-serif;
         line-height: 1.3;
         color: ${properties.colors.default};
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     label,
