@@ -3,9 +3,9 @@ import useGetCart from "../store/cart/getCart";
 import useGetProducts from "../store/products/getProducts";
 
 import MainNavi from "../components/navigation/MainNavi";
-import Cart from "../components/Modal/cart";
-import Payment from "../components/Modal/payment";
-import ProductDetail from "../components/Modal/productDetail";
+import Cart from "../components/modal/cart";
+import Payment from "../components/modal/payment";
+import ProductDetail from "../components/modal/productDetail";
 
 function Root() {
     // cart목록을 최초로 가져오기 위함
