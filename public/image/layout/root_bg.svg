@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-웹_1920_1">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="웹_1920_1" data-name="웹 1920 – 1" clip-path="url(#clip-웹_1920_1)">
+    <rect width="1920" height="1080" fill="#fff"/>
+    <rect id="사각형_1" data-name="사각형 1" width="1920" height="1080" fill="#f0e9e4"/>
+    <path id="패스_1" data-name="패스 1" d="M1918.853,1077.736h-1620L1717.4-2.264h201.453Z" transform="translate(1918.853 1077.736) rotate(180)" fill="#a57454"/>
+  </g>
+</svg>

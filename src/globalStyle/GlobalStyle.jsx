@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
 
     html,
     body {
-        background: no-repeat url('/image/layout/root_bg.png') center center;
+        background: no-repeat url('/image/layout/root_bg.svg') center center;
         background-attachment: fixed;
 
         font-weight: 400;
@@ -43,6 +43,28 @@ const GlobalStyle = createGlobalStyle`
         padding: 1rem;
         border-radius: 1.3rem;
         background: #fff;
+    }
+
+    button {
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 0.875rem;
+
+        &.default {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background: ${properties.colors.btnBg1};
+            transition: all 0.3s;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: ${properties.colors.white};;
+                background: ${properties.colors.btnBg1Hover};
+            }
+        }
     }
 `;
 

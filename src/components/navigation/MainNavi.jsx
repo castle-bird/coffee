@@ -3,6 +3,9 @@ import { modalAction } from "../../store/modal/modalSlice";
 
 import { NavLink } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+
 import MainNaviContainer from "./MainNavi-styled";
 import Button from "../button";
 
@@ -24,7 +27,10 @@ function MainNavi() {
                     <NavLink to="/market-review">매장후기</NavLink>
                 </li>
                 <li className="cart">
-                    <Button onClick={onClick}>장바구니 {cart.totalQuantity}</Button>
+                    <Button onClick={onClick}>
+                        <FontAwesomeIcon icon={faCartShopping} />
+                        <span>{cart.totalQuantity}</span>
+                    </Button>
                 </li>
             </ul>
         </MainNaviContainer>
