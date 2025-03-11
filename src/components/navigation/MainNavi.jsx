@@ -34,7 +34,7 @@ function MainNavi() {
             activeBg.current.style.width = `${width}px`;
         };
 
-        setPositon();
+        //setPositon();
     }, [params]);
 
     return (
@@ -42,12 +42,12 @@ function MainNavi() {
             <nav>
                 <ul>
                     <li>
-                        <NavLink ref={(link) => navBtns.current.push(link)} to="/">
+                        <NavLink ref={(link) => navBtns.current[0] = link} to="/">
                             주문
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink ref={(link) => navBtns.current.push(link)} to="/market-review">
+                        <NavLink ref={(link) => navBtns.current[1] = link} to="/market-review">
                             매장후기
                         </NavLink>
                     </li>
