@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useRef } from "react";
 import { modalAction } from "../../store/modal/modalSlice";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
@@ -17,22 +18,48 @@ function MainNavi() {
         dispatch(modalAction.toggleModal("showCart"));
     };
 
+    // 버튼 active
+    const params = useParams();
+    const activeBg = useRef();
+    const navBtns = useRef([]);
+
+    useEffect(() => {
+        // 네비게이션 bg 위치 조절
+        const setPositon = () => {
+            const activeBtn = navBtns.current.find((btn) => btn.classList.contains("active"));
+            const left = activeBtn.offsetLeft;
+            const width = activeBtn.offsetWidth;
+
+            activeBg.current.style.left = `${left}px`;
+            activeBg.current.style.width = `${width}px`;
+        };
+
+        setPositon();
+    }, [params]);
+
     return (
         <MainNaviContainer>
-            <ul>
-                <li>
-                    <NavLink to="/">주문</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/market-review">매장후기</NavLink>
-                </li>
-                <li className="cart">
-                    <Button onClick={onClick}>
-                        <FontAwesomeIcon icon={faCartShopping} />
-                        <span>{cart.totalQuantity}</span>
-                    </Button>
-                </li>
-            </ul>
+            <nav>
+                <ul>
+                    <li>
+                        <NavLink ref={(link) => navBtns.current.push(link)} to="/">
+                            주문
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink ref={(link) => navBtns.current.push(link)} to="/market-review">
+                            매장후기
+                        </NavLink>
+                    </li>
+                </ul>
+                <span ref={activeBg} className="active-bg"></span>
+            </nav>
+            <div className="util">
+                <Button onClick={onClick}>
+                    <FontAwesomeIcon icon={faCartShopping} />
+                    <span>{cart.totalQuantity}</span>
+                </Button>
+            </div>
         </MainNaviContainer>
     );
 }
