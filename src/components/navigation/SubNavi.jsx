@@ -18,6 +18,9 @@ function SubNavi() {
                 <li>
                     <Link to="bread">빵</Link>
                 </li>
+                <li>
+                    <Link to="tea-ade">티에이드</Link>
+                </li>
             </ul>
         </SubNaviContainer>
     );

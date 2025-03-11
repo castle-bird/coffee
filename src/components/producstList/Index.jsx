@@ -26,7 +26,7 @@ function ProductsList({ products }) {
                     products.map((product) => (
                         <li key={product.id}>
                             <div className="image-wrap">
-                                <img src={product.image} alt={`${product.name} 이미지`} />
+                                <img src={product.image} alt={`${product.name} 이미지`} loading="lazy"/>
                             </div>
                             <div className="text-wrap">
                                 <strong>{product.name}</strong>

@@ -10,6 +10,7 @@ import List from "../pages/marketReview/List";
 import Edit from "../pages/marketReview/edit";
 import View from "../pages/marketReview/view";
 import Modify from "../pages/marketReview/modify";
+import TeaAde from "../pages/teaAde/Index";
 
 const config = [
     {
@@ -53,6 +54,17 @@ const config = [
                     {
                         path: "detail/:productId",
                         element: <Bread />,
+                    },
+                ],
+            },
+            ,
+            {
+                path: "tea-ade",
+                element: <TeaAde />,
+                children: [
+                    {
+                        path: "detail/:productId",
+                        element: <TeaAde />,
                     },
                 ],
             },
