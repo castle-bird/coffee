@@ -1,12 +1,11 @@
-import { createBrowserRouter } from "react-router-dom";
-import config from "./routerConfig";
+import { createBrowserRouter, redirect } from "react-router-dom";
+
+import mainConfig from "./mainConfig";
+import reviewConfig from "./reviewConfig";
 
 import Root from "../pages/Root";
 import Error from "../pages/error/Error";
 
-// routes를 받아와서 재귀함수를 사용한다
-// 이유 : children 받아서 없으면 undefined 반환하고 있으면 children 생성하기 위해서
-// 페이지마다 depth가 다르니까
 const createRoutes = (routes) =>
     routes.map((route) => ({
         path: route.path,
@@ -16,11 +15,21 @@ const createRoutes = (routes) =>
     }));
 
 const router = createBrowserRouter([
+    
     {
         path: "/",
-        element: <Root />,
+        loader: () => redirect("/main"), 
         errorElement: <Error />,
-        children: createRoutes(config),
+    },
+    {
+        path: "/main",
+        element: <Root />,
+        children: createRoutes(mainConfig),
+    },
+    {
+        path: "/market-review",
+        element: <Root />,
+        children: createRoutes(reviewConfig),
     },
 ]);
 

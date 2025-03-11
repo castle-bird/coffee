@@ -27,14 +27,16 @@ function MainNavi() {
         // 네비게이션 bg 위치 조절
         const setPositon = () => {
             const activeBtn = navBtns.current.find((btn) => btn.classList.contains("active"));
+            if (!activeBtn) return;
+            
             const left = activeBtn.offsetLeft;
             const width = activeBtn.offsetWidth;
 
             activeBg.current.style.left = `${left}px`;
             activeBg.current.style.width = `${width}px`;
         };
-
-        //setPositon();
+        
+        setPositon();
     }, [params]);
 
     return (
@@ -42,7 +44,7 @@ function MainNavi() {
             <nav>
                 <ul>
                     <li>
-                        <NavLink ref={(link) => navBtns.current[0] = link} to="/">
+                        <NavLink ref={(link) => navBtns.current[0] = link} to="/main">
                             주문
                         </NavLink>
                     </li>
