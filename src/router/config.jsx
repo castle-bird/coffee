@@ -57,7 +57,6 @@ const config = [
                     },
                 ],
             },
-            ,
             {
                 path: "tea-ade",
                 element: <TeaAde />,
@@ -87,9 +86,9 @@ const config = [
                 element: <View />,
             },
             {
-                path: 'modify/:reviewId',
-                element: <Modify/>
-            }
+                path: "modify/:reviewId",
+                element: <Modify />,
+            },
         ],
     },
 ];
