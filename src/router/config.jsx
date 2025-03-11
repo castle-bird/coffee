@@ -1,6 +1,6 @@
 // 페이지 추가 하는 곳
 
-import Main from "../pages/main";
+import Main from "../pages/home";
 import AllMenu from "../pages/allMenu";
 import Coffee from "../pages/coffee";
 import NonCoffee from "../pages/nonCoffee";
