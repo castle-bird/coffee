@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import properties from "../../globalStyle/GlobalStyleVar";
 
 const RatingContainer = styled.div`
     display: flex;
@@ -9,7 +10,7 @@ const RatingContainer = styled.div`
         position: relative;
         &.on {
             label::before {
-                color: #6f00ff;
+                color: ${properties.colors.primary};
             }
         }
 
@@ -20,7 +21,7 @@ const RatingContainer = styled.div`
         &:hover,
         &:hover ~ .star-wrap {
             label {
-                color: #6f00ff;
+                color: ${properties.colors.primary};
             }
         }
 
@@ -39,7 +40,7 @@ const RatingContainer = styled.div`
             position: relative;
             cursor: pointer;
             color: #ccc;
-            font-size: 1.5rem;
+            font-size: 1rem;
             line-height: 1.2;
             transition: color 0.3s;
             text-indent: 0px;

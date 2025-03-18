@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import SubNaviContainer from "./SubNavi-styled";
 
@@ -7,19 +7,19 @@ function SubNavi() {
         <SubNaviContainer>
             <ul>
                 <li>
-                    <Link to="/">전체메뉴</Link>
+                    <NavLink to="/main" end>전체메뉴</NavLink>
                 </li>
                 <li>
-                    <Link to="coffee">커피</Link>
+                    <NavLink to="coffee">커피</NavLink>
                 </li>
                 <li>
-                    <Link to="non-coffee">논커피</Link>
+                    <NavLink to="non-coffee">논커피</NavLink>
                 </li>
                 <li>
-                    <Link to="bread">빵</Link>
+                    <NavLink to="bread">빵</NavLink>
                 </li>
                 <li>
-                    <Link to="tea-ade">티에이드</Link>
+                    <NavLink to="tea-ade">티에이드</NavLink>
                 </li>
             </ul>
         </SubNaviContainer>

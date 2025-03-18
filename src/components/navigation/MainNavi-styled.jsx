@@ -40,7 +40,7 @@ const MainNaviContainer = styled.div`
             position: absolute;
             top: 0.3rem;
             height: 42px;
-            background: ${properties.colors.btnBg1Hover};
+            background: ${properties.colors.primary};
             transition: left 0.3s;
             border-radius: 0.875rem;
         }
@@ -56,10 +56,19 @@ const MainNaviContainer = styled.div`
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.5rem;
+            font-size: 1.125rem;
+            transition: 0.3s;
+
+            &:hover,
+            &:focus {
+                svg {
+                    color: ${properties.colors.white};
+                }
+            }
 
             svg {
-                color: ${properties.colors.btnBg1Hover};
+                color: ${properties.colors.default};
+                transition: 0.3s;
             }
 
             span {
@@ -68,7 +77,7 @@ const MainNaviContainer = styled.div`
                 margin-bottom: -4px;
                 line-height: 25px;
                 text-align: center;
-                font-family: "Gmarket Sans";
+                font-family: "Gmarket Sans", sans-serif;
             }
         }
     }

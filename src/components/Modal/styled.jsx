@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 const ModalContainer = styled.dialog`
-  
-
-
     // 카트
     .cart {
         width: 30vw;
@@ -24,29 +21,28 @@ const ModalContainer = styled.dialog`
     }
 
     // 결제
-    .payment{
+    .payment {
         width: 30vw;
 
         .addr-wrap {
             display: flex;
             flex-wrap: wrap;
 
-            input[name=zonecode]{
+            input[name="zonecode"] {
                 width: 80px;
             }
 
-            input[name=roadAddr]{
-                flex:1;
+            input[name="roadAddr"] {
+                flex: 1;
             }
 
-            input[name=addrDetail]{
+            input[name="addrDetail"] {
                 width: 100%;
             }
 
             button {
-
             }
-        }   
+        }
     }
 `;
 

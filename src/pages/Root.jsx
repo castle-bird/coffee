@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import useGetCart from "../store/cart/getCart";
 import useGetProducts from "../store/products/getProducts";
+import CartAlert from "../components/cartAlert";
 
 import MainNavi from "../components/navigation/MainNavi";
 import Cart from "../components/modal/cart";
@@ -24,6 +25,7 @@ function Root() {
             <main>
                 <Outlet />
             </main>
+            <CartAlert />
         </>
     );
 }

@@ -33,10 +33,12 @@ const mediaQuery = {
 
 // color 색상
 const colors = {
+    primary: "#A57454",
     default: "#1a1a1a",
     white: "#fff",
     btnBg1: "#F0E9E4",
-    btnBg1Hover: "#A57454",
+    gray1: "#ededed",
+    brown1: "#A5745480"
 };
 
 const properties = {

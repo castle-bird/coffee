@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import properties from "../../globalStyle/GlobalStyleVar";
 
 const SubNaviContainer = styled.nav`
     ul {
@@ -8,7 +9,13 @@ const SubNaviContainer = styled.nav`
 
         li {
             a {
-                font-size: 20px;
+                display: block;
+                padding: 1.125rem 0;
+                font-family: "Gmarket Sans", sans-serif;
+
+                &.active {
+                    color: ${properties.colors.primary};
+                }
             }
         }
     }

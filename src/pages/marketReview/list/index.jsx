@@ -13,6 +13,12 @@ function List() {
             {!reviews.length !== 0 && (
                 <>
                     <table>
+                        <colgroup>
+                            <col width={100}/>
+                            <col />
+                            <col width={100}/>
+                            <col width={100}/>
+                        </colgroup>
                         <thead>
                             <tr>
                                 <th>메뉴명</th>
@@ -25,7 +31,7 @@ function List() {
                             {reviews.map((review) => (
                                 <tr key={review.id}>
                                     <td>{review.menu}</td>
-                                    <td>
+                                    <td className="title">
                                         <Link to={`view/${review.id}`}>{review.title}</Link>
                                     </td>
                                     <td>{review.date}</td>
@@ -38,7 +44,7 @@ function List() {
                     </table>
 
                     <div className="btn-wrap">
-                        <Link to="edit">글쓰기</Link>
+                        <Link to="edit">후기 작성하기</Link>
                     </div>
                 </>
             )}

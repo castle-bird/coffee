@@ -35,7 +35,7 @@ function ProductsList({ products }) {
                             <div className="btn-wrap">
                                 <Button onClick={() => onDetail(product)}>상세보기</Button>
                                 <Button onClick={() => addToCart(product)}>
-                                    장바구니 추가하기
+                                    장바구니 담기
                                 </Button>
                             </div>
                         </li>

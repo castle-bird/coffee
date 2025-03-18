@@ -98,9 +98,10 @@ function Edit() {
                         </li>
                         <li>
                             <span>별점</span>
-                            <Rating  essential={true} />
+                            <Rating essential={true} />
                         </li>
-                        <li>
+                        <li className="review">
+                            <span>후기 내용</span>
                             <Textarea label="리뷰 입력 칸" id="review" essential={true} />
                         </li>
                     </ul>

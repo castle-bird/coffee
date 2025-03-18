@@ -28,14 +28,15 @@ function MainNavi() {
         const setPositon = () => {
             const activeBtn = navBtns.current.find((btn) => btn.classList.contains("active"));
             if (!activeBtn) return;
-            
+
             const left = activeBtn.offsetLeft;
             const width = activeBtn.offsetWidth;
 
             activeBg.current.style.left = `${left}px`;
             activeBg.current.style.width = `${width}px`;
         };
-        
+
+        window.addEventListener("resize", setPositon);
         setPositon();
     }, [params]);
 
@@ -44,12 +45,12 @@ function MainNavi() {
             <nav>
                 <ul>
                     <li>
-                        <NavLink ref={(link) => navBtns.current[0] = link} to="/main">
+                        <NavLink ref={(link) => (navBtns.current[0] = link)} to="/main">
                             주문
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink ref={(link) => navBtns.current[1] = link} to="/market-review">
+                        <NavLink ref={(link) => (navBtns.current[1] = link)} to="/market-review">
                             매장후기
                         </NavLink>
                     </li>

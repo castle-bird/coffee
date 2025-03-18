@@ -24,7 +24,7 @@ const spin = keyframes`
 `;
 
 const LoadingContainer = styled.div`
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -36,7 +36,7 @@ const LoadingContainer = styled.div`
     .circle {
         width: 1.2rem;
         height: 1.2rem;
-        background-color: ${properties.colors.default};
+        background-color: ${properties.colors.primary};
         border-radius: 50%;
         position: absolute;
 

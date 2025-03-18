@@ -20,7 +20,8 @@ const GlobalStyle = createGlobalStyle`
 
     html,
     body {
-        background: no-repeat url('/image/layout/root_bg.svg') center center;
+        position: relative;
+        background: no-repeat url('/image/layout/root_bg2.png') center center / cover;
         background-attachment: fixed;
 
         font-weight: 400;
@@ -47,6 +48,27 @@ const GlobalStyle = createGlobalStyle`
         padding: 1rem;
         border-radius: 1.3rem;
         background: #fff;
+
+        &::before {
+            content: '';
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            width: 137px;
+            height: 149px;
+            transform: scale(0.8, 0.8);
+            background: no-repeat url('/image/layout/logo.png') center center / cover;
+            z-index: 100;
+
+            ${properties.mediaQuery.mobile(`
+                transform: scale(0.5, 0.5);
+            `)}
+        }
+
+        ${properties.mediaQuery.mobile(`
+            max-width: 100%;
+            margin: 20px; 
+        `)}
     }
 
     button {
@@ -54,6 +76,7 @@ const GlobalStyle = createGlobalStyle`
         border: none;
         outline: none;
         cursor: pointer;
+        font-family: "Pretendard Variable", Pretendard, "Gmarket Sans",-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",sans-serif;
         font-size: 0.875rem;
 
         &.default {
@@ -63,12 +86,31 @@ const GlobalStyle = createGlobalStyle`
             transition: all 0.3s;
 
             &:hover,
-            &:active,
             &:focus {
                 color: ${properties.colors.white};;
-                background: ${properties.colors.btnBg1Hover};
+                background: ${properties.colors.primary};
             }
         }
+    }
+
+    input {
+        padding: 5px 10px;
+        font-family: "Pretendard Variable", Pretendard, "Gmarket Sans",-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",sans-serif;
+        border: 1px solid ${properties.colors.brown1};
+    }
+
+    select {
+        padding: 5px 10px;
+        font-family: "Pretendard Variable", Pretendard, "Gmarket Sans",-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",sans-serif;
+        border: 1px solid ${properties.colors.brown1};
+    }
+
+    textarea {
+        padding: 5px 10px;
+        font-family: "Pretendard Variable", Pretendard, "Gmarket Sans",-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",sans-serif;
+        border: 1px solid ${properties.colors.brown1};
+        
+        min-height: 300px;
     }
 `;
 
