@@ -2,14 +2,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams, useNavigate, Link, useLocation } from "react-router-dom";
 import { reviewsAction } from "../../../store/reviews/reviewsSlice";
 
+import ViewContainer from "./styled";
+import Button from "../../../components/button";
+
 function View() {
     const navigate = useNavigate();
     const params = useParams();
     const reviewId = params.reviewId;
-    const location = useLocation()
+    const location = useLocation();
     const pathname = location.pathname;
-    const basePath = pathname.split('/')[1]; 
-
+    const basePath = pathname.split("/")[1];
 
     const dispatch = useDispatch();
     const reviews = useSelector((state) => state.reviews);
@@ -25,7 +27,6 @@ function View() {
 
         removeFetch(id);
         navigate("..");
-
     };
 
     const removeFetch = async (id) => {
@@ -46,13 +47,40 @@ function View() {
     };
 
     return (
-        <>
-            {JSON.stringify(currentReview)}
+        <ViewContainer>
+            <div className="contents-wrap">
+                <h3>후기 상세보기</h3>
 
-            <button onClick={goToBack}>목록</button>
-            <Link to={`/${basePath}/modify/${reviewId}`}>수정</Link>
-            <button onClick={() => removeReview(reviewId)}>삭제</button>
-        </>
+                <ul>
+                    <li>
+                        <strong>제목</strong>
+                        <p>{currentReview.title}</p>
+                    </li>
+                    <li>
+                        <strong>메뉴</strong>
+                        <p>{currentReview.menu}</p>
+                    </li>
+                    <li>
+                        <strong>날짜</strong>
+                        <p>{currentReview.date}</p>
+                    </li>
+                    <li>
+                        <strong>별점</strong>
+                        <p>{currentReview.star}</p>
+                    </li>
+                    <li>
+                        <strong>리뷰</strong>
+                        <p>{currentReview.review}</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div className="btn-wrap">
+                <Button onClick={goToBack}>목록</Button>
+                <Link to={`/${basePath}/modify/${reviewId}`}>수정</Link>
+                <Button onClick={() => removeReview(reviewId)}>삭제</Button>
+            </div>
+        </ViewContainer>
     );
 }
 

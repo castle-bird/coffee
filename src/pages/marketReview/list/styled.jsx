@@ -24,6 +24,8 @@ const ListContainer = styled.div`
                 text-align: center;
 
                 font-size: 0.875rem;
+                line-height: 2;
+               
 
                 &.title {
                     a {
