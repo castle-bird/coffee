@@ -111,6 +111,7 @@ const GlobalStyle = createGlobalStyle`
         border: 1px solid ${properties.colors.brown1};
         
         min-height: 300px;
+        line-height: 1.5;
     }
 `;
 

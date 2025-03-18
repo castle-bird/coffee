@@ -73,6 +73,7 @@ function Edit() {
             <form onSubmit={onSubmit}>
                 <fieldset>
                     <legend>후기 작성하기</legend>
+                    <h3>후기 작성하기</h3>
                     <ul>
                         <li>
                             <span>제목</span>

@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import properties from "../../../globalStyle/GlobalStyleVar";
 
-const EditContainer = styled.div`
+const ModifyContainer = styled.div`
     padding-top: 1.125rem;
 
     h3 {
         padding-bottom: 2rem;
         font-size: 2rem;
         text-align: center;
-        font-family: 'Gmarket Sans';
+        font-family: "Gmarket Sans";
     }
 
     form {
@@ -84,4 +84,4 @@ const EditContainer = styled.div`
     }
 `;
 
-export default EditContainer;
+export default ModifyContainer;

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import RatingContainer from "./styled";
 
-export default function Rating({ currentStar, essential = false, listView = false }) {
+export default function Rating({ currentStar, essential = false, listView = false, value }) {
     const stars = [5, 4, 3, 2, 1];
-    const [rating, setRating] = useState(currentStar || 0);
+    const [rating, setRating] = useState(currentStar || value || 0);
 
     const onChange = (e) => {
         if (currentStar) {
