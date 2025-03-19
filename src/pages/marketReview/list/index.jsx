@@ -6,18 +6,21 @@ import Rating from "../../../components/rating";
 
 function List() {
     const reviews = useSelector((state) => state.reviews);
+    const filteredReviews = [...reviews]?.sort((a, b) => new Date(b.date) - new Date(a.date)); // 복사본 생성 후 정렬
+
+    console.log(filteredReviews);
 
     return (
         <ListContainer>
-            {reviews.length === 0 && <Loading />}
-            {!reviews.length !== 0 && (
+            {filteredReviews.length === 0 && <Loading />}
+            {!filteredReviews.length !== 0 && (
                 <>
                     <table>
                         <colgroup>
-                            <col width={100}/>
+                            <col width={100} />
                             <col />
-                            <col width={100}/>
-                            <col width={100}/>
+                            <col width={100} />
+                            <col width={100} />
                         </colgroup>
                         <thead>
                             <tr>
@@ -28,7 +31,7 @@ function List() {
                             </tr>
                         </thead>
                         <tbody>
-                            {reviews.map((review) => (
+                            {filteredReviews.map((review) => (
                                 <tr key={review.id}>
                                     <td>{review.menu}</td>
                                     <td className="title">
