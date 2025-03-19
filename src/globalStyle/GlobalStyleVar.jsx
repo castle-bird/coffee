@@ -38,7 +38,12 @@ const colors = {
     white: "#fff",
     btnBg1: "#F0E9E4",
     gray1: "#ededed",
-    brown1: "#A5745480"
+    gray2: "#666666",
+    gray3: "#999494",
+    brown1: "#A5745480",
+    brown2: "#b8aaa4",
+    brown3: "#f2ede7",
+    brown4: "#f2ede780",
 };
 
 const properties = {

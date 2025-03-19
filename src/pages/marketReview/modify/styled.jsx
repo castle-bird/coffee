@@ -13,7 +13,7 @@ const ModifyContainer = styled.div`
 
     form {
         ul {
-            width: 500px;
+            max-width: 500px;
             margin: 0 auto;
 
             display: flex;
@@ -50,6 +50,7 @@ const ModifyContainer = styled.div`
                     textarea {
                         width: 100%;
                         resize: none;
+                        box-sizing: border-box;
                     }
                 }
             }

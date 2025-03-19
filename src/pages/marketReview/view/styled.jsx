@@ -11,6 +11,31 @@ const ViewContainer = styled.div`
         font-family: "Gmarket Sans";
     }
 
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 350px;
+        margin: 0 auto;
+
+        li {
+
+            strong {
+                display: block;
+                padding: 0px 0px 5px;
+                font-size: 1.2rem;
+                font-weight: 500;
+                font-family: 'Gmarket Sans', sans-serif;
+            }
+
+            .rating {
+                > div {
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+
     .btn-wrap {
         display: flex;
         justify-content: flex-end;

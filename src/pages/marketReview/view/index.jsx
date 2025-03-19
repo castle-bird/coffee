@@ -4,6 +4,7 @@ import { reviewsAction } from "../../../store/reviews/reviewsSlice";
 
 import ViewContainer from "./styled";
 import Button from "../../../components/button";
+import Rating from "../../../components/rating";
 
 function View() {
     const navigate = useNavigate();
@@ -16,7 +17,7 @@ function View() {
     const dispatch = useDispatch();
     const reviews = useSelector((state) => state.reviews);
 
-    const currentReview = reviews.find((review) => review.id === reviewId);
+    const currentReview = reviews?.find((review) => review.id === reviewId);
 
     const goToBack = () => {
         navigate("..");
@@ -54,23 +55,23 @@ function View() {
                 <ul>
                     <li>
                         <strong>제목</strong>
-                        <p>{currentReview.title}</p>
+                        <p>{currentReview && currentReview.title}</p>
                     </li>
                     <li>
                         <strong>메뉴</strong>
-                        <p>{currentReview.menu}</p>
+                        <p>{currentReview && currentReview.menu}</p>
                     </li>
                     <li>
                         <strong>날짜</strong>
-                        <p>{currentReview.date}</p>
+                        <p>{currentReview && currentReview.date}</p>
                     </li>
                     <li>
                         <strong>별점</strong>
-                        <p>{currentReview.star}</p>
+                        <p className="rating">{currentReview && <Rating currentStar={currentReview.star} />}</p>
                     </li>
                     <li>
                         <strong>리뷰</strong>
-                        <p>{currentReview.review}</p>
+                        <p>{currentReview && currentReview.review}</p>
                     </li>
                 </ul>
             </div>

@@ -13,7 +13,7 @@ const EditContainer = styled.div`
 
     form {
         ul {
-            width: 500px;
+            max-width: 500px;
             margin: 0 auto;
 
             display: flex;

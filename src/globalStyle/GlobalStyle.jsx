@@ -113,6 +113,14 @@ const GlobalStyle = createGlobalStyle`
         min-height: 300px;
         line-height: 1.5;
     }
+
+    dialog {
+        padding: 2rem;
+        outline:none;
+        border: 1px solid ${properties.colors.primary};
+        border-radius: 1rem;
+        box-sizing: border-box;
+    }
 `;
 
 export default GlobalStyle;

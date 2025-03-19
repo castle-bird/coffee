@@ -34,10 +34,16 @@ function Cart() {
             onClose={toggleModal === "showCart" ? onClose : null}
         >
             <div className="cart">
-                {cart.items.length === 0 && <p>현재 장바구니에 담긴 상품이 없습니다!</p>}
+                {cart.items.length === 0 && (
+                    <p className="no-cart">
+                        현재 장바구니에 담긴 <br /> 상품이 없습니다! <br />
+                        상품을 선택해 주세요!
+                    </p>
+                )}
 
                 {cart.items.length > 0 && (
                     <>
+                        <h3>장바구니 목록</h3>
                         <ul>
                             {cart.items.map((item) => (
                                 <li key={item.id}>
@@ -64,9 +70,10 @@ function Cart() {
                     </>
                 )}
             </div>
-
-            <Button onClick={onClose}>닫기</Button>
-            {cart.items.length !== 0 && <Button onClick={onPayment}>결제하기</Button>}
+            <div className="btn-wrap">
+                <Button onClick={onClose}>닫기</Button>
+                {cart.items.length !== 0 && <Button onClick={onPayment}>결제하기</Button>}
+            </div>
         </Modal>
     );
 }

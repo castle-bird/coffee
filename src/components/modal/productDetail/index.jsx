@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { useMemo } from "react";
 import { modalAction } from "../../../store/modal/modalSlice";
 import Modal from "..";
+import Button from "../../button";
 
 function ProductDetail() {
     const navigate = useNavigate();
@@ -30,8 +30,8 @@ function ProductDetail() {
                     <strong data-category={`${detailProcudt.category}`}>
                         {detailProcudt.name}
                     </strong>
-                    <p>{detailProcudt.engName}</p>
-                    <p>{detailProcudt.description}</p>
+                    <p className="eng-name">{detailProcudt.engName}</p>
+                    <p className="dec">{detailProcudt.description}</p>
 
                     {detailProcudt.category === "빵" || (
                         <>
@@ -85,8 +85,9 @@ function ProductDetail() {
                             </table>
                         </>
                     )}
-
-                    <button onClick={onClose}>닫기</button>
+                    <div className="btn-wrap">
+                        <Button onClick={onClose}>닫기</Button>
+                    </div>
                 </div>
             )}
         </Modal>

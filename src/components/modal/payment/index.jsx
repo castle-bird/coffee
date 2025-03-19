@@ -118,7 +118,8 @@ function Payment() {
             <div className="payment">
                 <form onSubmit={onSubmit}>
                     <fieldset>
-                        <legend>결제 정보 입력</legend>
+                        <legend>결제 정보 입력 폼</legend>
+                        <h3>결제 정보 입력하기</h3>
                         <ul>
                             <li>
                                 <em>이름</em>
