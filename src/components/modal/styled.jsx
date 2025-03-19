@@ -4,7 +4,7 @@ import properties from "../../globalStyle/GlobalStyleVar";
 const ModalContainer = styled.dialog`
     // 카트
     .cart {
-        max-width: calc(500px - 4rem);
+        width: 30vw;
 
         h3 {
             font-family: "Gmarket Sans", sans-serif;
@@ -84,36 +84,73 @@ const ModalContainer = styled.dialog`
         }
 
         ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
 
             li {
-
                 em {
-                    
+                    display: block;
+                    padding-bottom: 5px;
+                    font-weight: 500;
+                }
+
+                #phoneNumber {
+                    width: 100%;
+                }
+
+
+                .addr-wrap {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 5px;
+
+                    p {
+                        width: 100%;
+                    }
+
+                    .code {
+                        input {
+                            width: 80px;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .info {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 5px;
+                        
+                        input {
+                            width: 100%;
+                            margin-right: 5px;
+                        }
+                    }
+
+                    /* input[name="zonecode"] {
+                        width: 80px;
+                    }
+
+                    input[name="roadAddr"] {
+                        flex: 1;
+                    }
+
+                    input[name="addrDetail"] {
+                        width: 100%;
+                    } */
                 }
             }
         }
-
-        .addr-wrap {
-            display: flex;
-            flex-wrap: wrap;
-
-            input[name="zonecode"] {
-                width: 80px;
-            }
-
-            input[name="roadAddr"] {
-                flex: 1;
-            }
-
-            input[name="addrDetail"] {
-                width: 100%;
-            }
+        .totalPrice {
+            font-weight: 500;
+            padding-top: 1rem;
+            font-size: 1.125rem;
         }
     }
 
     // 상세보기
     .detail {
-        max-width: 500px;
+        width: 30vw;
 
         strong {
             font-weight: 600;

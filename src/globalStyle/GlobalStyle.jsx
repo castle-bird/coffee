@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     html,
     body {
         position: relative;
+        min-width: 1140px;
         background: no-repeat url('/image/layout/root_bg2.png') center center / cover;
         background-attachment: fixed;
 
@@ -60,15 +61,15 @@ const GlobalStyle = createGlobalStyle`
             background: no-repeat url('/image/layout/logo.png') center center / cover;
             z-index: 100;
 
-            ${properties.mediaQuery.mobile(`
+            /* ${properties.mediaQuery.mobile(`
                 transform: scale(0.5, 0.5);
-            `)}
+            `)} */
         }
 
-        ${properties.mediaQuery.mobile(`
+        /* ${properties.mediaQuery.mobile(`
             max-width: 100%;
             margin: 20px; 
-        `)}
+        `)} */
     }
 
     button {
@@ -95,17 +96,24 @@ const GlobalStyle = createGlobalStyle`
 
     input {
         padding: 5px 10px;
+        border-radius: 5px;
         font-family: "Pretendard Variable", Pretendard, "Gmarket Sans",-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",sans-serif;
         border: 1px solid ${properties.colors.brown1};
+
+        &:read-only {
+            background-color: #f5f5f5;
+        }
     }
 
     select {
+        border-radius: 5px;
         padding: 5px 10px;
         font-family: "Pretendard Variable", Pretendard, "Gmarket Sans",-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",sans-serif;
         border: 1px solid ${properties.colors.brown1};
     }
 
     textarea {
+        border-radius: 5px;
         padding: 5px 10px;
         font-family: "Pretendard Variable", Pretendard, "Gmarket Sans",-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",sans-serif;
         border: 1px solid ${properties.colors.brown1};

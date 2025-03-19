@@ -136,26 +136,29 @@ function Payment() {
                             <li>
                                 <em>주소</em>
                                 <div className="addr-wrap">
-                                    <Input
-                                        label="우편번호"
-                                        id="zonecode"
-                                        type="text"
-                                        value={formValues.zonecode}
-                                        onChange={valueChange}
-                                        placeholder="우편번호"
-                                        readOnly
-                                    />
-                                    <Button onClick={findAddr}>주소찾기</Button>
-                                    <Input
-                                        label="주소"
-                                        id="roadAddr"
-                                        type="text"
-                                        value={formValues.roadAddr}
-                                        onChange={valueChange}
-                                        placeholder="주소"
-                                        readOnly
-                                    />
-                                    {/* {formValues.jibunAddr && (
+                                    <p className="code">
+                                        <Input
+                                            label="우편번호"
+                                            id="zonecode"
+                                            type="text"
+                                            value={formValues.zonecode}
+                                            onChange={valueChange}
+                                            placeholder="우편번호"
+                                            readOnly
+                                        />
+                                        <Button onClick={findAddr}>주소찾기</Button>
+                                    </p>
+                                    <p className="info">
+                                        <Input
+                                            label="주소"
+                                            id="roadAddr"
+                                            type="text"
+                                            value={formValues.roadAddr}
+                                            onChange={valueChange}
+                                            placeholder="주소"
+                                            readOnly
+                                        />
+                                        {/* {formValues.jibunAddr && (
                                         <Input
                                             label="지번(예전주소)"
                                             id="jibunAddr"
@@ -166,15 +169,16 @@ function Payment() {
                                         />
                                     )} */}
 
-                                    <Input
-                                        label="상세주소"
-                                        id="addrDetail"
-                                        type="text"
-                                        value={formValues.addrDetail}
-                                        essential={true}
-                                        placeholder="상세주소"
-                                        onChange={valueChange}
-                                    />
+                                        <Input
+                                            label="상세주소"
+                                            id="addrDetail"
+                                            type="text"
+                                            value={formValues.addrDetail}
+                                            essential={true}
+                                            placeholder="상세주소"
+                                            onChange={valueChange}
+                                        />
+                                    </p>
                                 </div>
                             </li>
                             <li>

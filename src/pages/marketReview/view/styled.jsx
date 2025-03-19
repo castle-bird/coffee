@@ -28,6 +28,12 @@ const ViewContainer = styled.div`
                 font-family: 'Gmarket Sans', sans-serif;
             }
 
+            p {
+                padding: 15px;
+                border-radius: 10px;
+                background-color: #f5f5f5;
+            }
+
             .rating {
                 > div {
                     justify-content: flex-end;
